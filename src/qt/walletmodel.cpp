@@ -311,7 +311,7 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
         insanefee = ((MIN_RELAY_TX_FEE * insanefee) * 10000);
         if (nFeeRequired > insanefee){
             LogPrintf("nFeeRequired: %d -- InsaneFee: %d\n", nFeeRequired, insanefee);
-            return InsaneFee;
+            return SendCoinsReturn(OK);
         }
     }
 
